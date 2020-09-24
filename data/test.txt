@@ -1,0 +1,4 @@
+源文本绝对路径：E:\Learning_Practice\Ecilpse\eclipse_workspace\Essay\data\orig.txt
+查重文本绝对路径：E:\Learning_Practice\Ecilpse\eclipse_workspace\Essay\data\orig_0.8_add.txt
+文本重复率为：0.63
+文本重复率为：63.27%[百分比形式]

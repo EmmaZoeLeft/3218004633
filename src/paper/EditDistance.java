@@ -5,16 +5,16 @@ public class EditDistance {
 		int Distance = 0;
 		int ed = 0;
 		if (l1 != 0 && l2 != 0) {
-			int[][] Distance_shuzu = new int[l1 + 1][l2 + 1];
+			int[][] Distance_Array = new int[l1 + 1][l2 + 1];
 			//编号
 			int Bianhao = 0;//初始化，给每个字符编号
 			for (int i = 0; i <= l1; i++) {
-				Distance_shuzu[i][0] = Bianhao;
+				Distance_Array[i][0] = Bianhao;
 				Bianhao++;
 			}
 			Bianhao = 0;
             for (int i = 0; i <= l2; i++) {
-                Distance_shuzu[0][i] = Bianhao;
+                Distance_Array[0][i] = Bianhao;
                 Bianhao++;
             }
 
@@ -27,17 +27,17 @@ public class EditDistance {
                     	Distance = 0;}//相同不变 
                     else{Distance = 1;}
 
-                    int Temp1 = Distance_shuzu[i - 1][j] + 1;//增
-                    int Temp2 = Distance_shuzu[i][j - 1] + 1;//减
-                    int Temp3 = Distance_shuzu[i - 1][j - 1] + Distance;//改
+                    int Temp1 = Distance_Array[i - 1][j] + 1;//增
+                    int Temp2 = Distance_Array[i][j - 1] + 1;//减
+                    int Temp3 = Distance_Array[i - 1][j - 1] + Distance;//改
 
-                    Distance_shuzu[i][j] = Math.min(Temp1, Temp2);//找最小的一步
-                    Distance_shuzu[i][j] = Math.min(Temp3, Distance_shuzu[i][j]);
+                    Distance_Array[i][j] = Math.min(Temp1, Temp2);//找最小的一步
+                    Distance_Array[i][j] = Math.min(Temp3, Distance_Array[i][j]);
                 }
             }
-
-            ed = Distance_shuzu[l1][l2];
+            ed = Distance_Array[l1][l2];
         }
+		
         return ed;
     }
 }
